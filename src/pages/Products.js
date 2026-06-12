@@ -8,7 +8,7 @@ function Products() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost/VS_Jwellers/products.php')
+    fetch('http://vsjwellers.kesug.com/api/products.php')
       .then(res => res.json())
       .then(data => {
         setProducts(data)

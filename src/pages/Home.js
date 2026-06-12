@@ -4,7 +4,7 @@ function Home() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost/VS_Jwellers/products.php')
+    fetch('http://vsjwellers.kesug.com/api/products.php')
       .then(res => res.json())
      .then(data => {
   const categories = {}
