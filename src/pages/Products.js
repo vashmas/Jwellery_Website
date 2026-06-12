@@ -8,7 +8,7 @@ function Products() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://vsjwellers.kesug.com/api/products.php')
+    fetch(`${process.env.REACT_APP_API_URL}/products.php`)
       .then(res => res.json())
       .then(data => {
         setProducts(data)

@@ -8,7 +8,7 @@ function AdminLogin({ onLogin }) {
 
   const handleLogin = () => {
     setLoading(true)
-    fetch('http://vsjwellers.kesug.com/api/admin_login.php', {
+    fetch(`${process.env.REACT_APP_API_URL}/products.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })

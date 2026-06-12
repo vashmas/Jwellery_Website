@@ -14,7 +14,7 @@ const categories = ['Necklace', 'Earrings', 'Ring', 'Bracelet', 'Bangles']
 
   // Products fetch karo
   const fetchProducts = () => {
-    fetch('http://vsjwellers.kesug.com/api/products.php')
+    fetch(`${process.env.REACT_APP_API_URL}/products.php`)
       .then(res => res.json())
       .then(data => {
         setProducts(data)
@@ -29,7 +29,7 @@ const categories = ['Necklace', 'Earrings', 'Ring', 'Bracelet', 'Bangles']
     if (!image) return null
     const formData = new FormData()
     formData.append('image', image)
-    const res = await fetch('http://vsjwellers.kesug.com/api/upload.php', {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/upload.php`, {
       method: 'POST',
       body: formData
     })
@@ -44,7 +44,7 @@ const categories = ['Necklace', 'Earrings', 'Ring', 'Bracelet', 'Bangles']
       return
     }
     const filename = await uploadImage()
-    const res = await fetch('http://vsjwellers.kesug.com/api/upload.php', {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/products.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...form, image: filename || '' })
@@ -62,7 +62,7 @@ const categories = ['Necklace', 'Earrings', 'Ring', 'Bracelet', 'Bangles']
   // Product delete karo
   const handleDelete = (id) => {
     if (window.confirm('Delete this product?')) {
-     fetch(`http://vsjwellers.kesug.com/api/products.php?id=${id}`, {
+     fetch(`${process.env.REACT_APP_API_URL}/products.php?id=${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())

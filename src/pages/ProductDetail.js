@@ -7,7 +7,7 @@ function ProductDetail() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`http://vsjwellers.kesug.com/api/products.php?id=${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/products.php?id=${id}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data)

@@ -4,7 +4,7 @@ function Home() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://vsjwellers.kesug.com/api/products.php')
+   fetch(`${process.env.REACT_APP_API_URL}/products.php`)
       .then(res => res.json())
      .then(data => {
   const categories = {}
