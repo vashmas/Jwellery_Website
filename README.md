@@ -65,6 +65,8 @@ VS Jwellers is a complete business website solution that includes:
 ---
 
 ## 📁 Project Structure
+
+```
 vs-jwellers/
 ├── public/
 │   └── Logo.png
@@ -83,12 +85,12 @@ vs-jwellers/
 │   │   └── Contact.js
 │   ├── App.js
 │   └── index.css
-└── backend/ (XAMPP/htdocs/VS_Jwellers/)
-├── config.php
-├── products.php
-├── upload.php
-├── admin_login.php
-└── uploads/
+└── backend/
+    ├── config.php
+    ├── products.php
+    ├── upload.php
+    ├── admin_login.php
+    └── uploads/
 
 ---
 
